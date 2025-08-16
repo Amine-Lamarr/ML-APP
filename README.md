@@ -1,16 +1,16 @@
-<h1>this is a Machine learning Application about predicing your phone addiction depending on input features</h1>
+<h1 style='color='red''>this is a Machine learning Application about predicing your phone addiction depending on input features</h1>
 
 <h2>models used:</h2>
 <p>
-  LIGHTgbm : 
-  best score : 91.81%
-  mae : 0.049
-  mse : 0.005
-----------------------
-  XGBoost : 
-  best score : 91.03%
-  mae : 0.054
-  mse : 0.006
+  LIGHTgbm : <br>
+  best score : 91.81%<br>
+  mae : 0.049<br>
+  mse : 0.005<br>
+----------------------<br>
+  XGBoost : <br>
+  best score : 91.03%<br>
+  mae : 0.054<br>
+  mse : 0.006<br>
 </p>
 
 <h2>concepts :</h2>
