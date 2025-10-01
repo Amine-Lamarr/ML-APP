@@ -3,10 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# ======================== Page Configuration ========================
 st.set_page_config(page_title="📱 Addiction Prediction", layout="centered")
-
-# ======================== Custom Styling ========================
 st.markdown(
     """
     <style>
@@ -33,7 +30,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ======================== Load Resources ========================
 model = joblib.load("lightmodel.joblib")
 scalers = joblib.load("scalers.joblib")
 encoders = joblib.load("encoded.joblib")
@@ -46,24 +42,20 @@ selected_features = [
     'Phone_Usage_Purpose_Other', 'Phone_Usage_Purpose_Social Media'
 ]
 
-# ======================== Sidebar User Info ========================
 st.sidebar.title("👤 User Info")
 user_name = st.sidebar.text_input("Enter your name", placeholder="e.g. Amine")
 
-user_guess = st.sidebar.slider("How addicted do YOU think you are? 🤔", 0.0, 10.0, step=0.5)
+user_guess = st.sidebar.slider("How addicted do YOU think you are? ", 0.0, 10.0, step=0.5)
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("📱 **Fun Questions**")
 
-q1 = st.sidebar.radio("Do you sleep with your phone in hand?", ["No 😇", "Sometimes 😅", "Always 💀"])
-q2 = st.sidebar.radio("Have you cried over low battery?", ["Never 😂", "Maybe once... 😬", "Yes 😭"])
+q1 = st.sidebar.radio("Do you sleep with your phone in hand?", ["No ", "Sometimes ", "Always "])
+q2 = st.sidebar.radio("Have you cried over low battery?", ["Never ", "Maybe once... ", "Yes "])
 q3 = st.sidebar.radio("Use phone in the toilet?", ["Who doesn't? 🚽📱", "Ew no", "Sometimes..."])
 
-# ======================== Page Title ========================
 st.title("📱 Phone Addiction AI Prediction")
 st.markdown("Fill in your information to predict your addiction level 🎯")
-
-# ======================== Main Page Inputs ========================
 user_input = {}
 
 col1, col2 = st.columns(2)
@@ -118,7 +110,7 @@ if st.button("🔎 Predict Addiction Level"):
         st.warning("Not even close... AI knows you better! haha")
 
     st.markdown("---")
-    st.markdown("### 😂 Fun Answers:")
+    st.markdown("### Fun Answers:")
     st.markdown(f"- **Sleep with phone?** {q1}")
     st.markdown(f"- **Cried over battery?** {q2}")
     st.markdown(f"- **Toilet usage?** {q3}")
